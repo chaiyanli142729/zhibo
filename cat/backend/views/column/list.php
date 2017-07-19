@@ -50,38 +50,47 @@
 																<span class="lbl"></span>
 															</label>
 														</th>
-														<th class="sorting" role="columnheader" tabindex="0" aria-controls="sample-table-2" rowspan="1" colspan="1" style="width: 170px;" aria-label="id: activate to sort column ascending">
-															id
+														<th class="sorting" role="columnheader" tabindex="0" aria-controls="sample-table-2" rowspan="1" colspan="1" style="width: 100px;" aria-label="id: activate to sort column ascending">
+															ID
 														</th>
 														<th class="hidden-480 sorting" role="columnheader" tabindex="0" aria-controls="sample-table-2" rowspan="1" colspan="1" style="width: 126px;" aria-label="name: activate to sort column ascending">
-															name
+															栏目
 														</th>
-														<th class="sorting_disabled" role="columnheader" rowspan="1" colspan="1" style="width: 174px;" aria-label="">
-														</th>
+                                                        <th class="hidden-480 sorting" role="columnheader" tabindex="0" aria-controls="sample-table-2" rowspan="1" colspan="1" style="width: 126px;" aria-label="name: activate to sort column ascending">
+                                                            图片
+                                                        </th>
+                                                        <th class="hidden-480 sorting" role="columnheader" tabindex="0" aria-controls="sample-table-2" rowspan="1" colspan="1" style="width: 126px;" aria-label="name: activate to sort column ascending">
+                                                            添加时间
+                                                        </th>
+                                                        <th class="sorting_disabled" role="columnheader" rowspan="1" colspan="1" style="width: 174px;" aria-label="">
+                                                            操作
+                                                        </th>
 													</tr>
 												</thead>
 
 												
 											<tbody role="alert" aria-live="polite" aria-relevant="all">
 												<tr class="odd" v-for="(nav,index) in navs">
-														<td class="center  sorting_1">
-															<label>
-																<input class="ace" type="checkbox">
-																<span class="lbl"></span>
-															</label>
-														</td>
-														<td class=" ">{{nav.id}}</td>
-														<td class=" ">{{nav.name}}</td>
-														<td class=" ">
-															<div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
-																<button class="green">
-																	<i class="icon-pencil bigger-130"></i>
-																</button>
-																<button class="red">
-																	<i class="icon-trash bigger-130"></i>
-																</button>
-															</div>
-														</td>
+                                                    <?php foreach($data as $k=>$v){ ?>
+                                                        <tr>
+                                                        <td><input class="ace" type="checkbox"></td>
+														<td class=" "><?php echo $v['id'] ?></td>
+														<td class=" "><?php echo $v['column'] ?></td>
+														<td class=" "><?php echo $v['c_id'] ?></td>
+														<td class=" "><?php echo $v['add_time'] ?></td>
+                                                    <td class=" ">
+                                                        <div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
+                                                            <button class="green">
+                                                                <i class="icon-pencil bigger-130"></i>
+                                                            </button>
+                                                            <button class="red">
+                                                                <i class="icon-trash bigger-130"></i>
+                                                            </button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                    <?php }  ?>
+
 													</tr>
 												</tbody>
 												</table>
