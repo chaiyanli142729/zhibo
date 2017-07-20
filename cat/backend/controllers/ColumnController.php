@@ -1,19 +1,12 @@
 <?php
 namespace backend\controllers;
-
-use frontend\models\Auser;
-use frontend\models\Status;
-
-use frontend\models\AuserForm;
-
-
-
 use Yii;
 use yii\db;
 use app\models\LbordColumn;
 use yii\web\Controller;
 use backend\models\UploadForm;
 use yii\web\UploadedFile;
+use yii\data\ActiveDataProvider;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 
@@ -74,7 +67,7 @@ class ColumnController extends Controller
         else
         {
             $query = LbordColumn::find();
-            $dataProvider = new yii\data\ActiveDataProvider([
+            $dataProvider = new ActiveDataProvider([
                 'query'=>$query,
                 'pagination'=>[
                     'pagesize'=>10
