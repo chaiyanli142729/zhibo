@@ -93,8 +93,19 @@ class ColumnController extends Controller
 	/*
 		栏目删除
 	 */
-	public function actionDel()
+	public function actionDelete()
 	{
+        $id = $_GET['id'];
+        $i = yii::$app->db->createCommand()->delete('lbord_column',"id = $id")->execute();
+
+        if($i){
+            return $this->actionList();
+
+        }else{
+            echo "<script>alert('删除失败')</script>";
+            return $this->actionList();
+
+        }
 
 	}
 
