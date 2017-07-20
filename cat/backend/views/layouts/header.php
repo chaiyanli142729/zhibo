@@ -274,7 +274,11 @@
 								<img class="nav-user-photo" src="/cat/avatars/user.jpg" alt="Jason's Photo">
 								<span class="user-info">
 									<small>欢迎光临,</small>
-									Jason
+									<?php
+										$admin = Yii::$app->session->get('admin');
+										echo empty($admin)?Jack:$admin['admin_name'];
+									?>
+
 								</span>
 
 								<i class="icon-caret-down"></i>
@@ -298,7 +302,7 @@
 								<li class="divider"></li>
 
 								<li>
-									<a href="#">
+									<a href="?r=admins/logout">
 										<i class="icon-off"></i>
 										退出
 									</a>
