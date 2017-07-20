@@ -22,10 +22,11 @@ class ArticleController extends CommonController
 		}else{
 			$info = $_POST;
 			$info['news_addtime']=time();
+//			print_r($info);die;
 			$sql = yii::$app->db->createCommand()->insert('lbord_news',$info)->execute();
 			
 			if($sql){
-				return $this->actionShow();
+				return $this->actionShow();	
 			}else{
 				return $this->render('adds');
 				
@@ -35,9 +36,41 @@ class ArticleController extends CommonController
 	}
 	
 	public function actionShow(){
+		if(isset($_GET['per'])){
+			$per = $_GET['per'];
+			
+		}else{
+			$per = 1;
+			
+		}
 		$query = new Query();
-		$info = $query->from('lbord_news')->all();
-		return $this->render('show',['info'=>$info]);
+		$sum = (new \yii\db\Query())
+    			->from('lbord_news')
+    			->count();
+    	
+//		print_r($sum);die;
+		
+		$limit = 3;
+		$num = ceil($sum/$limit);
+		$lim = 0;
+		if($per == $num){
+			
+			$lim = $sum - ($per-1)*$limit;
+		}else{
+			$lim = $limit;
+			
+		}
+//		echo $lim;
+//		echo $per;die;
+		$i = ($per-1)*$limit;
+//		echo $i; echo $lim;
+//		print_r($num);die;
+		$info = (new \yii\db\Query())
+   			 ->from('lbord_news')
+   			 ->limit($lim)
+   			 ->offset($i)
+   			 ->all();
+		return $this->render('show',['info'=>$info,'num'=>$num]);
 	}
 	
 	public function actionDel(){

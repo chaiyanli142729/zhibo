@@ -229,6 +229,32 @@ use yii\helpers\Url;
 								</li>
 							</ul>
 						</li>
+						<li>
+							<a href="#" class="dropdown-toggle">
+								<i class="icon-list"></i>
+								<span class="menu-text"> 新闻管理 </span>
+
+								<b class="arrow icon-angle-down"></b>
+							</a>
+
+							<ul class="submenu">
+								<li>
+									<a href="<?php echo Url::to(['article/index']) ?>">
+										<i class="icon-double-angle-right"></i>
+										<i class="icon-plus"></i>
+										新闻添加
+									</a>
+								</li>
+								<li>
+									<a href="<?php echo Url::to(['article/show']) ?>">
+										<i class="icon-double-angle-right"></i>
+										<i class="icon-eye-open"></i>
+										新闻列表
+									</a>
+								</li>
+								
+							</ul>
+						</li>
 					</ul><!-- /.nav-list -->
 
 					

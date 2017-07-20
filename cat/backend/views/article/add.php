@@ -63,8 +63,8 @@
 										<label class="col-sm-3 control-label no-padding-right" for="form-field-1"> 新闻内容: </label>
 
 										<div class="col-sm-9">
-											<div class="col-xs-12 col-sm-3">
-												<input id="form-field-1"  placeholder=" nav name " class="col-xs-10 col-sm-12" type="text" name="news_content">
+											<div class="col-xs-12 col-sm-9">
+												<textarea name="news_content" id="myEditor"></textarea>
 											</div>
 										</div>
 									</div>
@@ -124,3 +124,8 @@
 						</div><!-- /.row -->
 					</div>
 				</div>
+				<script type="text/javascript" src="/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="/ueditor/ueditor.all.js"></script>
+<script type="text/javascript">
+    UE.getEditor('myEditor');
+</script>
