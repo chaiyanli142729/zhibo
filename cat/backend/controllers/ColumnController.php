@@ -38,7 +38,7 @@ class ColumnController extends Controller
                 $re = $LbordColumn->save();
                 if($re)
                 {
-                    $this->redirect('?r=column/show');
+                    $this->redirect('?r=column/list');
                 }
                 else
                 {
