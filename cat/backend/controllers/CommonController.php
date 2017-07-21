@@ -16,5 +16,6 @@ class CommonController extends Controller
 		parent::init();
 	}
 	
+	
 
 }

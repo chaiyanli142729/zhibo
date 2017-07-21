@@ -9,8 +9,8 @@ use yii\web\UploadedFile;
 use yii\data\ActiveDataProvider;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
-
-class GiftController extends Controller
+use backend\controllers\CommonController;
+class GiftController extends CommonController
 {
 
 	/*

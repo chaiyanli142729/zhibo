@@ -9,9 +9,9 @@ use yii\web\UploadedFile;
 use yii\data\ActiveDataProvider;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use backend\controllers\CommonController;
 
-
-class ColumnController extends Controller
+class ColumnController extends CommonController
 {
 	/*
 		栏目添加

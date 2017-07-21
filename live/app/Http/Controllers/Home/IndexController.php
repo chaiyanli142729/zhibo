@@ -11,6 +11,7 @@ class IndexController extends Controller
 {
     public function index()
     {
+//  	echo "111";
     	return view('home/index/index');
     }
 }

@@ -5,8 +5,8 @@ use Yii;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
-
-class SendController extends Controller
+use backend\controllers\CommonController;
+class SendController extends CommonController
 {
 
 	/*

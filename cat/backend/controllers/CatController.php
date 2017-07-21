@@ -5,8 +5,8 @@ use Yii;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
-
-class CatController extends Controller
+use backend\controllers\CommonController;
+class CatController extends CommonController
 {
 
 	/*
