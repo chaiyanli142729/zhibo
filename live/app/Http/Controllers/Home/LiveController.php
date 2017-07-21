@@ -18,4 +18,8 @@ class LiveController extends Controller
     public function room() {
     	return view('home/live/room');
     }
+
+    public function li(){
+        return view('home/live/li');
+    }
 }
