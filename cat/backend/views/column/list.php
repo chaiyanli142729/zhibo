@@ -22,7 +22,16 @@ use yii\grid\GridView;
                                         'id',
                                         'column',
                                         'c_id',
-                                        'img',
+                                        [
+                                            'label'=>'封面图',
+                                            'format'=>'raw',
+                                            'value'=>function($m){
+                                            return yii\helpers\Html::img($m->img,
+                                            ['class' => 'img',
+                                            'width' => 30]
+                                            );
+                                            }
+                                        ],
                                         [
                                             'attribute'=>'add_time',
                                             'label'=>'添加时间',

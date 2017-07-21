@@ -3,8 +3,10 @@ namespace backend\controllers;
 
 use Yii;
 use yii\web\Controller;
+use app\models\LbordUser;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use yii\data\ActiveDataProvider;
 use backend\controllers\CommonController;
 class UserController extends CommonController
 {
@@ -41,7 +43,15 @@ class UserController extends CommonController
 		if($data = Yii::$app->request->post()){
 
 		}else{
-			return $this->render('wait');
+
+			$query = LbordUser::find()->where(['if_zb'=>1]);
+            $dataProvider = new ActiveDataProvider([
+                'query'=>$query,
+                'pagination'=>[
+                    'pagesize'=>10
+                ]
+            ]);
+            return $this->render('wait',['dataProvider'=>$dataProvider,'model'=>$query]);
 		}
 	}
 
@@ -50,11 +60,22 @@ class UserController extends CommonController
 	 */
 	public function actionStart()
 	{
-		if($data = Yii::$app->request->post()){
+		if($data = Yii::$app->request->get()){
+			$id=$_GET['id'];
+			$if_zb=$_GET['if_zb'];
+
+			$res = LbordUser::find()->where(['uid'=>$id])->one();
+			$res -> if_zb = $if_zb;
+            $re=$res -> save();
+			if(!$re){
+				return $this->actionWait();	
+			}else{
+				return $this->actionWait();
+				
+			}
 
 		}else{
 			return $this->render('start');
 		}
 	}
-
 }

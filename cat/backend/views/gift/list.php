@@ -13,7 +13,16 @@ use yii\grid\GridView;
                     'lw_id',
                     'lw_name',
                     'lw_price',
-                    'attribute'=>'lw_img',
+                    [
+                        'label'=>'封面图',
+                        'format'=>'raw',
+                        'value'=>function($m){
+                        return yii\helpers\Html::img($m->lw_img,
+                        ['class' => 'img',
+                        'width' => 30]
+                        );
+                        }
+                    ],
                     [
                         'attribute'=>'add_time',
                         'label'=>'添加时间',
