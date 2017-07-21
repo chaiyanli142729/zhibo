@@ -65,7 +65,7 @@ use yii\helpers\Url;
 							<ul class="submenu" style="display: none;">
 
 								<li>
-									<a href="<?php echo Url::to(['user/admin']) ?>" class="dropdown-toggle">
+									<a href="<?php echo Url::to(['admins/list']) ?>" class="dropdown-toggle">
 										<i class="double-angle-right"></i>
 										<i class="icon-eye-open"></i>
 											管理员
@@ -232,7 +232,7 @@ use yii\helpers\Url;
 						<li>
 							<a href="#" class="dropdown-toggle">
 								<i class="icon-list"></i>
-								<span class="menu-text"> 新闻管理 </span>
+								<span class="menu-text"> 文章管理 </span>
 
 								<b class="arrow icon-angle-down"></b>
 							</a>
@@ -242,17 +242,16 @@ use yii\helpers\Url;
 									<a href="<?php echo Url::to(['article/index']) ?>">
 										<i class="icon-double-angle-right"></i>
 										<i class="icon-plus"></i>
-										新闻添加
+										文章添加
 									</a>
 								</li>
 								<li>
 									<a href="<?php echo Url::to(['article/show']) ?>">
 										<i class="icon-double-angle-right"></i>
 										<i class="icon-eye-open"></i>
-										新闻列表
+										文章列表
 									</a>
 								</li>
-								
 							</ul>
 						</li>
 					</ul><!-- /.nav-list -->

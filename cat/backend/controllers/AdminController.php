@@ -29,10 +29,12 @@ class AdminController extends Controller{
             }else{
                      $admin_name = $data['AdminForm']['admin_name'];
                      $admin_pwd = $data['AdminForm']['admin_pwd'];
-                    $info = Admin::find()->where(['admin_name' => $admin_name,'admin_pwd'=>$admin_pwd])->one();
+                    $info = Admin::find()->where(['admin_name' => $admin_name,'admin_pwd'=>$admin_pwd])->asArray()->one();   
                     //print_r($info);die;
                     if($info){
-                            $this->redirect('?r=admin/list');
+                            Yii::$app->session->set('admin',$info);
+                            //$this->redirect('?r=admin/list');
+                            $this->redirect('?r=cat/index');
                     }else{
                             $this->redirect('?r=admin/log');
                     }
@@ -56,7 +58,7 @@ class AdminController extends Controller{
 	                    $admin->admin_pwd = $data['AdminForm']['admin_pwd'];
 	                    $re = $admin->save();
 	                    if($re){
-	                        $this->redirect('?r=admin/list');
+	                        $this->redirect('?r=admin/log');
 	                    }else{
 	                        $this->redirect('?r=admin/reg');
 	                        die;
@@ -67,17 +69,9 @@ class AdminController extends Controller{
 	                     }     
 	 }
     }
-    //管理员列表展示
-    public function actionList(){
-            $query = Admin::find();
-            $dataProvider = new yii\data\ActiveDataProvider([
-                'query'=>$query,
-                'pagination'=>[
-                    'pagesize'=>10
-                ]
-            ]);
-            return $this->render('list',['dataProvider'=>$dataProvider]);
-    }
+    
+
+    
 
 
                 
