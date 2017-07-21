@@ -6,7 +6,7 @@ use yii;
 use db;
 use backend\models\AdminForm;
 use yii\web\Controller;
-
+use backend\controllers\CommonController;
 
 class AdminsController extends CommonController{
    
