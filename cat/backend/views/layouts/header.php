@@ -276,7 +276,7 @@
 									<small>欢迎光临,</small>
 									<?php
 										$admin = Yii::$app->session->get('admin');
-										echo empty($admin)?Jack:$admin['admin_name'];
+										echo empty($admin)?"":$admin['admin_name'];
 									?>
 
 								</span>
