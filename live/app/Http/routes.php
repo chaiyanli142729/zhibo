@@ -18,8 +18,8 @@
 Route::get('/', 'Home\IndexController@index');
 Route::group(['namespace'=> 'Home'],function(){
 	//首页
-	 Route::get('/', [
-        'as' => 'index', 'uses' => 'IndexController@index'
+	Route::get('/', [
+         'as' => 'index', 'uses' => 'IndexController@index'
     ]);
 	 //首页直播页面
 	 Route::get('/live','LiveController@index');
@@ -40,4 +40,7 @@ Route::group(['namespace'=> 'Home'],function(){
 	 //订阅与查看历史
 	 Route::get('/sub','ZhuController@sub');
 	 Route::get('/ass','ZhuController@ass');
+	 //分类
+	 Route::get('/sort','SortController@index');
+	 
 });
