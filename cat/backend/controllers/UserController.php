@@ -26,14 +26,16 @@ class UserController extends CommonController
 	/*
 		普通用户列表
 	 */
-	public function actionPlain()
-	{
-		if($data = Yii::$app->request->post()){
-
-		}else{
-			return $this->render('plain');
-		}
-	}
+	public function actionPlain(){
+            $query = LbordUser::find();
+            $dataProvider = new ActiveDataProvider([
+                'query'=>$query,
+                'pagination'=>[
+                    'pagesize'=>10
+                ]
+            ]);
+            return $this->render('plain',['dataProvider'=>$dataProvider]);
+    }
 
 	/*
 		主播待审核列表
@@ -78,4 +80,20 @@ class UserController extends CommonController
 			return $this->render('start');
 		}
 	}
+
+	public function actionDelete()
+    {
+        $id = $_GET['id'];
+        $i = yii::$app->db->createCommand()->delete('lbord_user',"uid = $id")->execute();
+
+        if($i){
+            return $this->actionPlain();
+
+        }else{
+            echo "<script>alert('删除失败')</script>";
+            return $this->actionPlain();
+
+        }
+
+    }
 }

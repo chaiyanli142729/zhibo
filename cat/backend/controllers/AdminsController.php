@@ -32,4 +32,6 @@ class AdminsController extends CommonController{
             $this->redirect('?r=admin/log');
 
     }
+
+ 
 }
