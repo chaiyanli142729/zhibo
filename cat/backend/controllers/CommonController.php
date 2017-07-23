@@ -68,7 +68,6 @@ class CommonController extends Controller
 //		$ri = yii::$app->session->get($id);
 ////		print_r($ri);
 ////获取要访问的的控制器和方法
-////		print_r($_SERVER);
 //		$rb = $_SERVER['QUERY_STRING'];
 ////		echo $rb;
 //		//判断有没有权限
