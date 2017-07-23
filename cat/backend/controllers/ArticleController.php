@@ -23,7 +23,7 @@ class ArticleController extends CommonController
 			$info = $_POST;
 			$info['news_addtime']=time();
 //			print_r($info);die;
-			$sql = yii::$app->db->createCommand()->insert('lbord_news',$info)->execute();
+			$sql = yii::$app->db->createCommand()->insert('news',$info)->execute();
 			
 			if($sql){
 				return $this->actionShow();	
@@ -45,7 +45,7 @@ class ArticleController extends CommonController
 		}
 		$query = new Query();
 		$sum = (new \yii\db\Query())
-    			->from('lbord_news')
+    			->from('news')
     			->count();
     	
 //		print_r($sum);die;
@@ -66,7 +66,7 @@ class ArticleController extends CommonController
 //		echo $i; echo $lim;
 //		print_r($num);die;
 		$info = (new \yii\db\Query())
-   			 ->from('lbord_news')
+   			 ->from('news')
    			 ->limit($lim)
    			 ->offset($i)
    			 ->all();
@@ -76,7 +76,7 @@ class ArticleController extends CommonController
 	public function actionDel(){
 		
 		$id = $_GET['id'];
-		$i = yii::$app->db->createCommand()->delete('lbord_news',"news_id = $id")->execute();
+		$i = yii::$app->db->createCommand()->delete('news',"news_id = $id")->execute();
 
 		if($i){
 			return $this->actionShow();
@@ -92,7 +92,7 @@ class ArticleController extends CommonController
 		
 		if(isset($_GET['id'])){
 			$id = $_GET['id'];
-			$db = (new Query())->from('lbord_news')
+			$db = (new Query())->from('news')
 				->where(['news_id'=>$id])
 				->one();
 			return $this->render('up',['data'=>$db]);
@@ -100,7 +100,7 @@ class ArticleController extends CommonController
 			$info = $_POST;
 			$id= $info['news_id'];
 //			unset($info['id']);
-			$i = yii::$app->db->createCommand()->update('lbord_news',$info,"news_id =$id")->execute();
+			$i = yii::$app->db->createCommand()->update('news',$info,"news_id =$id")->execute();
 			if($i){
 				echo "s";
 			}else{

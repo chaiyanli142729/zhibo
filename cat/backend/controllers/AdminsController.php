@@ -27,6 +27,7 @@ class AdminsController extends CommonController{
     	//echo 99999;die;
             $session = Yii::$app->session;
 	  $session->remove('admin');
+
             
             $this->redirect('?r=admin/log');
 
