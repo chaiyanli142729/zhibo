@@ -42,5 +42,7 @@ Route::group(['namespace'=> 'Home'],function(){
 	 Route::get('/ass','ZhuController@ass');
 	 //分类
 	 Route::get('/sort','SortController@index');
+	 Route::get('/sort_parent/{id}','SortController@sort');
+	 
 	 
 });
