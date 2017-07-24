@@ -13,8 +13,11 @@ class SortController extends Controller
     {
     	$info = Column::where('p_t_id','>','0')->get();
     	$parent = Column::where('p_t_id','0')->get();
+		$parents =json_decode(json_encode($parent),true);
+		$infos =json_decode(json_encode($info),true);
     	
-		return view('home/sort/index',['info'=>$info,'parent'=>$parent]);
+//  	print_r($infos);die;
+		return view('home/sort/index',['info'=>$infos,'parent'=>$parents]);
 	}
 	
 	public function sort($id){
