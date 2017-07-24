@@ -18,15 +18,11 @@
 Route::get('/', 'Home\IndexController@index');
 Route::group(['namespace'=> 'Home'],function(){
 	//首页
-	Route::get('/', [
-         'as' => 'index', 'uses' => 'IndexController@index'
+	 Route::get('/', [
+        'as' => 'index', 'uses' => 'IndexController@index'
     ]);
 	 //首页直播页面
 	 Route::get('/live','LiveController@index');
-    Route::get('blade', function () {
-        return view('home/child');
-    });
-	 Route::get('/li','LiveController@li');
 	 //个人中心
 	 Route::get('/per','ZhuController@index');
 	 //我的消息
@@ -40,9 +36,10 @@ Route::group(['namespace'=> 'Home'],function(){
 	 //订阅与查看历史
 	 Route::get('/sub','ZhuController@sub');
 	 Route::get('/ass','ZhuController@ass');
-	 //分类
-	 Route::get('/sort','SortController@index');
-	 Route::get('/sort_parent/{id}','SortController@sort');
-	 
-	 
+
+    Route::get('/log','LogController@log');
+    Route::get('/reg','LogController@reg');
+    Route::get('log/captcha/{tmp}', 'LogController@captcha');
+    Route::get('wer_add', 'LogController@wer_add');
 });
+
