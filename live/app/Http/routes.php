@@ -34,12 +34,19 @@ Route::group(['namespace'=> 'Home'],function(){
 	 //成为主播
 	 Route::get('/go','ZhuController@go');
 	 //订阅与查看历史
+	 Route::get('/sort','SortController@index');
+	 Route::get('/sort_parent/{id}','SortController@sort');
+    //视频上传
+    Route::get('/video', 'VideoController@video');
+
 	 Route::get('/sub','ZhuController@sub');
 	 Route::get('/ass','ZhuController@ass');
-
+	 
     Route::get('/log','LogController@log');
     Route::get('/reg','LogController@reg');
-    Route::get('log/captcha/{tmp}', 'LogController@captcha');
+    Route::get('log/captcha/{tmp}','LogController@captcha');
     Route::get('wer_add', 'LogController@wer_add');
+
+    
 });
 

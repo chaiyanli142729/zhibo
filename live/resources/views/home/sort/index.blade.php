@@ -878,7 +878,7 @@
 
                         <dl>
 
-                            <dd bussType="0" class=" active all" ><a class="clickstat" href="/sort" eid="click/list/allgame/all"   eid_desc="点击/列表页/全部游戏/全部">全部</a></dd>
+                            <dd bussType="0" class=" active all" ><a class="clickstat" href="sort" eid="click/list/allgame/all"   eid_desc="点击/列表页/全部游戏/全部">全部</a></dd>
                             @foreach($parent as $l)
 
                             <dd bussType="1" class="" ><a class="clickstat" href="/sort_parent/{{$l['t_id']}}" eid="click/list/allgame/online"   eid_desc="点击/列表页/全部游戏/网游竞技">{{$l['t_name']}}</a></dd>

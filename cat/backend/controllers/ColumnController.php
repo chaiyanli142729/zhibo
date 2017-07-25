@@ -1,4 +1,4 @@
-23  5全体  <?php
+<?php
 namespace backend\controllers;
 use Yii;
 use yii\db;

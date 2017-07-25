@@ -37,6 +37,7 @@ class LogController extends Controller
                 Session::put('uid',$userid);
 
                 echo '登陆成功';
+                return redirect('/');
             }
             //echo '登陆成功';
         }else{

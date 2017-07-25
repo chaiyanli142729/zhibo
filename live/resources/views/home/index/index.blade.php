@@ -5,6 +5,7 @@
 <!--[if IE 9]>         <html class="ie9" lang="zh-cmn-Hans"> <![endif]-->
 <!--[if gt IE 9]><!--> <html lang="zh-cmn-Hans"><!--<![endif]-->
 <head>
+	
     <meta charset="utf-8">
     <title>虎牙直播-中国领先的互动直播平台</title>
     <base href="http://www.live.com/home/">
@@ -49,7 +50,7 @@
                 <span class="hy-nav-link duya-header-on"><a href="/" class="hy-nav-title clickstat" eid="click/navi/home" eid_desc="点击/导航/首页">首页</a></span>
                 <span class="hy-nav-link"><a href="live" class="hy-nav-title hiido_stat clickstat"  hiido_code="10004221" eid="click/navi/zhibo" eid_desc="点击/导航/直播">直播</a></span>
                 <div class="hy-nav-expand">
-                    <div class="hy-nav-title nav-main" id="nav-main"><a href="sort">分类</a><i class="icon-arrow"></i></div>
+                    <div class="hy-nav-title nav-main" id="nav-main"><a href="/sort">分类</a><i class="icon-arrow"></i></div>
                     <div class="nav-expand-list nav-expand-game">
                         <i class="arrow"></i>
                     </div>
@@ -153,9 +154,9 @@
                     <div class="hy-nav-title">
                         <i class="hy-nav-icon hy-nav-login-icon"></i>
                         <div class="un-login-btn">
-                            <a class="clickstat" id="nav-login" href="#" eid="click/navi/sign" eid_desc="点击/导航/登录">登录</a>
+                            <a class="clickstat" id="#" href="/log" eid="#" eid_desc="点击/导航/登录">登录</a>
                             <i>|</i>
-                            <a class="clickstat" id="nav-regiest" href="#" eid="click/navi/login" eid_desc="点击/导航/注册">注册</a>
+                            <a class="clickstat" id="#" href="/reg" eid="#" eid_desc="点击/导航/注册">注册</a>
                         </div>
                     </div>
                 </div>
